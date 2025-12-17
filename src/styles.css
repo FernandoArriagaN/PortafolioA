@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    background: linear-gradient(
+    135deg,
+    #0d0d0d 0%,
+    #141821 100%
+  );
+}
+
+

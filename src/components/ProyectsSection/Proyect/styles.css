@@ -1,0 +1,263 @@
+.imgSection,
+.imgFeatures,
+.imgFront {
+    width: 100%;
+}
+
+.proyectContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 13%;
+  justify-self: center;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    #000005 0%,
+    #020617 50%,
+    #000005 100%
+  );
+
+}
+
+.proyectContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.1;
+ }
+
+.imgContainerP {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: space-evenly; 
+    position: relative;
+    
+    
+}
+
+
+
+.infoConteinerP {
+    grid-row: span 2 / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #666;
+    align-items: center;
+    margin: 5%;
+
+}
+
+
+.card-swap-container {
+  position: absolute;
+  bottom: 10%;
+  right: -10%;
+  width: 120%;
+  height: 50vw;
+  transform: translate(5%, 20%);
+  transform-origin: bottom right;
+  perspective: 900px;
+  overflow: visible;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 100%;
+  height: 35vw;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  background: #000;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  .card-swap-container {
+    transform: scale(0.75) translate(25%, 25%);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-swap-container {
+    transform: scale(0.55) translate(25%, 25%);
+  }
+}
+
+
+
+
+.proyectTitleGlitchContainer {
+  position: relative;
+  width: 90%;
+  top: -10%;
+  z-index: 2;
+  justify-items: center;
+  
+}
+.containerGlitchText {
+  font-size: 2vh;
+}
+.proyectt {
+  position: absolute;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 100px;
+  pointer-events: none; 
+
+  
+}
+.top {
+    position: absolute;
+    clip-path: inset(0 0 50% 0);
+    
+}
+
+.bottom {
+    position: absolute;
+    clip-path: inset(50% 0 0 0);
+}
+
+
+.imgBack {
+  width: 53%;
+}
+
+
+
+
+
+.backToProyecs {
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  place-self: flex-start;
+  
+  
+}
+
+.backToProyecs p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: #777777;
+  
+}
+
+.backToProyecs::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: #fff;
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.backToProyecs p::before {
+  position: absolute;
+  box-sizing: border-box; 
+  content: "Proyectos";
+  width: 0%;
+  inset: 0;
+  color: #fff;
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.backToProyecs:hover::after {
+  width: 100%;
+}
+
+.backToProyecs:hover p::before {
+  width: 100%;
+}
+
+.backToProyecs:hover svg {
+  transform: translateX(-4px);
+  color: #fff;
+}
+
+.backToProyecs svg {
+  color: #777777;
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
+
+.liveProyect {
+  place-self: end;
+  margin-right: 13%;
+}
+
+
+.button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: #8b8b8ba9;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-content: center;
+  font-weight: 600;
+}
+
+.button__text {
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 8s linear infinite;
+}
+
+.button__text > span {
+  position: absolute;
+  transform: rotate(calc(19deg * var(--index)));
+  inset: 2px;
+}
+
+.button__circle {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  overflow: hidden;
+  background: transparent;
+  color:  #8b8b8ba9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__icon {
+  position: absolute;
+}
+
+.button__icon--copy {
+  transform: translate(-150%, 150%);
+}
+
+@keyframes text-rotation {
+  to {
+    rotate: 360deg;
+  }
+}

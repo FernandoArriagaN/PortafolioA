@@ -1,0 +1,61 @@
+.skillsSectionContainer {
+    position: relative;
+    width: 100%;
+    align-content: center;
+    overflow: hidden;
+    user-select: none;
+    padding: 10% 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.skillsSectionContainer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.1;
+}
+.titleCarrusel {
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 3% 
+}
+
+
+.containerThirdLine,
+.containerSecondLine,
+.containerFirstLine {
+    display: flex;
+    gap: 20px;
+    font-size: 2vw; 
+    align-items: center;
+    margin: 5% 40px;
+    text-align: center;
+    width: fit-content;
+    color: #3f3f3fad;
+    font-weight: 900;
+     white-space: nowrap
+}
+
+.carrouselContainer {
+    mask-image: linear-gradient(
+    to right,
+    transparent,      
+    black 50%,        
+    black 50%,        
+    transparent       
+    );
+}
+
+
+.skill {
+    transition: color 1s ease;
+}
+.skill:hover {
+    color: #fff;
+    transition: color 1s ease;
+}

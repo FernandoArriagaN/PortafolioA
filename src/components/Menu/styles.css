@@ -1,0 +1,46 @@
+.menuContainer {
+  position: fixed;
+  z-index: 9;
+  padding: 1%;
+  justify-self: end;
+  max-width: fit-content;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.navContainer {
+  display: flex;
+  flex-direction: column;
+}
+.navContainer svg {
+  color: #020b35;
+  
+  transition: ease 0.5s;
+}
+.navContainer a:hover  {
+  transform: translateX(-4px);
+  color: #fff;
+  transition: ease 0.5s;
+}
+
+.navContainer a {
+  margin: 5px;
+  background:#fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: ease 0.5s;
+}
+
+.navContainer svg:hover {
+  color: #62006e;
+  transition: ease 0.5s;
+}
+
+
+

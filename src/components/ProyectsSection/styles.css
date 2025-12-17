@@ -1,0 +1,77 @@
+.proyectsContainer {
+    justify-items: center;
+    overflow: hidden;
+    width: 100%;
+    position: relative; 
+    padding-top: 5%;
+
+}
+
+.proyectsContainer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.1;
+}
+
+
+
+
+
+.proyect {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid #fff;
+    
+
+}
+
+
+
+.prntProyect {
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+}
+
+.proyectName {
+    position: absolute;
+}
+.containerGlitchText {
+    position: relative;
+    width: 90%;
+    height: 20vh;
+    z-index: 2;
+}
+
+.glithch {
+    position: absolute;
+    font-size: 530%;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 100px;
+    pointer-events: none; 
+    text-shadow: 0px 0 #fff;
+  
+}
+.top {
+    position: absolute;
+    clip-path: inset(0 0 50% 0);
+    
+}
+
+.bottom {
+    position: absolute;
+    clip-path: inset(50% 0 0 0);
+}

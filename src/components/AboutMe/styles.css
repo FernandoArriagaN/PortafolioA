@@ -1,0 +1,107 @@
+.aboutMeContainer {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    
+}
+.aboutMeContainer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.1;
+}
+
+
+.aboutMeTitleContainer{
+  align-self: center;
+  text-align: center;
+  font-size: 3.5rem;
+  color: #4b4b4b;
+
+}
+
+
+.asideAboutMe{
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 8px;
+    color: #fff;
+    justify-items: end;
+    place-self: center;
+    align-items: center;
+}
+
+
+.downloadCvContainer{
+    display: flex;
+    justify-content: center;
+    width: 55%;
+}
+
+
+.imgProfile {
+    width: 50%;
+    align-self: center;
+    filter: grayscale(50%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 90%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 90%);
+}
+
+.legend {
+    opacity: 0;
+    justify-self: center;
+    text-align: center;
+    font-size: 2rem;
+    margin: 30% 0% 35%;
+    font-weight: 800;
+    font-style: italic;
+    
+}
+
+.textAboutMe {
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+   line-height: 150%;
+}
+
+
+
+
+.downloadCv {
+  background: transparent;
+  color: #f2f2f2;
+  padding: 14px 28px;
+  border: 1px solid rgba(51, 51, 51, 0.6);
+  border-radius: 6px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+
+
+
+.downloadCv:hover {
+  animation: glitch 0.25s steps(2);
+   box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.4),
+    0 0 18px rgba(255, 255, 255, 0.35);
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+}
+
+
+

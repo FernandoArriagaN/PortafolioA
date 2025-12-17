@@ -1,0 +1,67 @@
+.welcomeSection {
+    color: #fff;
+   overflow: hidden;
+    height: 100vh;
+}
+.welcomeSection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.1;
+}
+
+
+.nameTitle {
+    font-size: 3vw;
+    font-weight: 100;
+    padding: 2% 5%;
+}
+
+
+
+.ramaTitle {
+   font-size: 9vw;
+    font-weight: 900;
+    position: relative;
+    height: 24vw;
+    margin: 0% 10%;
+    margin-top: 7%;
+
+    
+}
+
+
+.secondLineDev {
+    position: absolute;
+    bottom: 50px;
+    left: 7%;
+    top: 40%;
+}
+
+
+.graphicTitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #5f0000c0;
+}
+
+
+.secondLineGraph {
+    position: absolute;
+    left: 7%;
+    top: 40%;
+    color: #5f0000c0;
+    display: block;
+
+}
+
+.letterDev,
+.secondLetterDev,
+.letterGraph,
+.secondLetterGraph {
+    display: inline-block;
+}
+
+
