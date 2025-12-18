@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react"
 import './styles.css'
 import profileImg from './img/Subject1.png'
 import gsap from "gsap"
-import miCv from './assets/CV.pdf'
+import Cv from './assets/CV.pdf'
 
 
 
@@ -121,7 +121,7 @@ export const AboutMe = () => {
                 <img src={profileImg} className="imgProfile" alt="profileImg"/>
             </aside>
             <article className="downloadCvContainer">
-                <a href={miCv}  download>
+                <a href={Cv}  download>
                 <button  className="downloadCv">Descarga Cv</button>
                 </a>
             </article>
