@@ -1,7 +1,7 @@
-import { Link, useLocation, useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { ProyectsData } from "../ProyectData"
 import './styles.css'
-import React, { Children, cloneElement, forwardRef, isValidElement, useEffect, useMemo, useRef } from 'react';
+import React, { Children, cloneElement, forwardRef, isValidElement, useEffect, useMemo, useRef, useCallback } from 'react';
 import gsap, { Power4 } from 'gsap';
 import { TimelineMax } from "gsap/gsap-core";
 
@@ -62,7 +62,7 @@ const CardSwap = ({
   const childArr = useMemo(() => Children.toArray(children), [children]);
   const refs = useMemo(
     () => childArr.map(() => React.createRef()),
-    [childArr.length]
+    [childArr]
   );
 
   const order = useRef(Array.from({ length: childArr.length }, (_, i) => i));
@@ -155,7 +155,7 @@ const CardSwap = ({
       };
     }
     return () => clearInterval(intervalRef.current); 
-  }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, easing]);
+  }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, easing, refs, config.durDrop, config.durMove, config.durReturn, config.ease, config.promoteOverlap, config.returnDelay]);
 
   const rendered = childArr.map((child, i) =>
     isValidElement(child)
@@ -235,10 +235,10 @@ export const Proyect = ({onNavigate}) => {
     })
   }, [])
     
-  const handleClickHome = (e, ruta) => {
+  const handleClickHome = useCallback((e, ruta) => {
     e.preventDefault()
     onNavigate(ruta)
-  }
+  }, [onNavigate]);
 
 
   //dfgdfgdfg
@@ -337,15 +337,15 @@ const buttonRef = useRef(null);
               <Link onClick={(e) => handleClickHome(e, '#proyectsSection')} className="backToProyecs"> 
                  <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
+                    className="h-6 w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    stroke-width="4"
+                    strokeWidth="4"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M10 19l-7-7m0 0l7-7m-7 7h18"
                     />
                   </svg><p>Proyectos</p>
@@ -401,15 +401,15 @@ const buttonRef = useRef(null);
                     pauseOnHover={true}
                 >
                     <Card>
-                    <img src={currentProyect.imgProyectPort} className="imgFront" />
+                    <img src={currentProyect.imgProyectPort} className="imgFront" alt="Project portfolio view" />
                     </Card>
 
                     <Card>
-                    <img src={currentProyect.imgProyectSection} className="imgSection" />
+                    <img src={currentProyect.imgProyectSection} className="imgSection" alt="Project section view" />
                     </Card>
 
                     <Card>
-                    <img src={currentProyect.imgProyectFeature} className="imgFeatures" />
+                    <img src={currentProyect.imgProyectFeature} className="imgFeatures" alt="Project features view" />
                     </Card>
                 </CardSwap>
             </article>
@@ -418,20 +418,3 @@ const buttonRef = useRef(null);
         </section>
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
