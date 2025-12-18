@@ -120,7 +120,7 @@ export const AboutMe = () => {
                 <img src={profileImg} className="imgProfile" alt="profileImg"/>
             </aside>
             <article className="downloadCvContainer">
-                <a href="/public/assets/CV.pdf" download>
+                <a href="/assets/CV.pdf" download>
                 <button className="downloadCv">Descarga Cv</button>
                 </a>
             </article>
