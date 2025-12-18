@@ -83,7 +83,7 @@ export const ContactSection = () => {
                                 required
                                 disabled={status.submitting}
                             />
-                            <label for="name">Nombre</label>
+                            <label htmlFor="name">Nombre</label>
                         </div>
                         <div className="form-row" id='emailDiv'>
                             <input 
@@ -94,7 +94,7 @@ export const ContactSection = () => {
                                 required
                                 disabled={status.submitting}
                             />
-                            <label for="email">email</label>
+                            <label htmlFor="email">email</label>
                         </div>
                         <div className="form-row" id='subjectDiv'>
                         <input 
@@ -104,7 +104,7 @@ export const ContactSection = () => {
                             onChange={handleChange}
                             required
                             disabled={status.submitting}/>
-                            <label for="subject">Asunto</label>
+                            <label htmlFor="subject">Asunto</label>
                         </div>
                         <textarea 
                         className='asunto'
