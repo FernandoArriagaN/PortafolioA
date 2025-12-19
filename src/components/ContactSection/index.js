@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './styles.css'
 
 export const ContactSection = () => {
@@ -8,19 +8,8 @@ export const ContactSection = () => {
     subject: '',
     message: ''
   })
-
   const [submitted, setSubmitted] = useState(false)
-
-  // Detectar éxito desde la URL
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
-    if (params.get('success') === 'true') {
-      setSubmitted(true)
-
-      // limpiar URL
-      window.history.replaceState({}, document.title, window.location.pathname)
-    }
-  }, [])
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -28,6 +17,32 @@ export const ContactSection = () => {
       [e.target.name]: e.target.value
     })
   }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault() 
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...formData
+        }).toString()
+      })
+
+      if (response.ok) {
+        setSubmitted(true)
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      }
+    } catch (error) {
+      console.error('Error:', error)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+  
 
   return (
     <section className="contact" id="contact">
@@ -49,10 +64,9 @@ export const ContactSection = () => {
               method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              action="/?success=true"
+              onSubmit={handleSubmit}
               className="contact-form"
             >
-              {/* requerido por Netlify */}
               <input type="hidden" name="form-name" value="contact" />
               <input type="hidden" name="bot-field" />
 
@@ -63,6 +77,7 @@ export const ContactSection = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 />
                 <label>Nombre</label>
               </div>
@@ -74,6 +89,7 @@ export const ContactSection = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 />
                 <label>Email</label>
               </div>
@@ -85,6 +101,7 @@ export const ContactSection = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 />
                 <label>Asunto</label>
               </div>
@@ -97,10 +114,11 @@ export const ContactSection = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting}
               />
 
-              <button type="submit" className="submit-btn">
-                Enviar Mensaje
+              <button type="submit" className="submit-btn" disabled={isSubmitting}>
+                {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
               </button>
             </form>
           )}
