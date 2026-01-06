@@ -25,22 +25,30 @@ import imgVansSection from './img/vansImgSection.jpg'
 import imgVansFeature from './img/vansImgFeature.jpg'
 
 
+import urbanPortada from './img/urbanPortada.jpg'
+import imgUrbanPort from './img/urbanEdgeImgPort.jpg'
+import imgUrbanSection from './img/urbanImgSection.jpg'
+import imgUrbanFeature from './img/urbanImgFeature.jpg'
+
+
 
 
 
 export const ProyectsData = [
-    {name:  'Caras Landing page',
-        portadaImg: carasPortada,
-        technology:'React, TypeScript, JavaScript, SEO, Jest',
-        description:'ReactCaras es un proyecto desarrollado como práctica para fortalecer habilidades en React, aplicando componentes funcionales y efectos visuales para construir una experiencia moderna y atractiva. Su objetivo principal fue crear una interfaz tipo landing page que incentive al usuario a suscribirse a una revista, cuidando la estructura, los estilos y las animaciones para lograr un diseño fluido y profesional. Además, el código fue minificado para optimizar el rendimiento y mejorar los tiempos de carga. El proyecto utiliza tecnologías como React, Styled Components, HTML5 y CSS3.',
-        infoData: 'Desarrollé Caras, una landing page enfocada en atraer y captar suscriptores para la revista mexicana del mismo nombre, especializada en entretenimiento y noticias del mundo del espectáculo. Este proyecto fue creado como práctica para reforzar mis habilidades en React, aplicando conceptos clave como componentes funcionales, manejo de estado y efectos visuales.',
-        imgProyectPort: imgCarasPort,
-        imgProyectSection: imgCarasSection,
-        imgProyectFeature: imgCarasFeature,
-        route: '/Caras',
-        livePage:'https://landingcaras.netlify.app/' ,
+    
+    {
+        name: 'Urban Edge',
+        portadaImg: urbanPortada, 
+        technology: 'React Router Dom, HTML5, React, Redux Toolkit (Slices), Custom Hooks, GSAP, Axios, API, JavaScript, CSS3.',
+        description: 'Plataforma de e-commerce de muebles de alta gama con estética industrial, integrada con una API externa para la gestión dinámica de productos y stock.',
+        infoData: 'Este proyecto es una solución integral de tienda virtual que consume datos en tiempo real de la Furniture API. Implementa gestión de estado con Redux Toolkit para el carrito de compras y la sincronización de la UI tras las peticiones asíncronas. Destaca por su alto nivel de interactividad mediante el uso de GSAP para animaciones, transiciones fluidas en la pasarela de pago y un sistema de partículas (confeti) tras la compra. Incluye búsqueda dinámica, filtrado de piezas de diseño y un flujo de checkout profesional completamente responsivo.',
+        imgProyectPort: imgUrbanPort,    
+        imgProyectSection: imgUrbanSection, 
+        imgProyectFeature: imgUrbanFeature, 
+        route: '/UrbanEdge',
+        livePage: 'https://urbanedg.netlify.app/', 
     },
-
+    
     {name:  'The Gaming Hub',
         portadaImg: gamingPortada,
         technology:'React, Redux Toolkit, Axios, JavaScript, HTML5, CSS3, SEO, Jest',
@@ -63,6 +71,18 @@ export const ProyectsData = [
         imgProyectFeature: imgVoxFeature,
         route: '/Vox',
         livePage:'https://voxnova.netlify.app/',
+    },
+    
+    {name:  'Caras Landing page',
+        portadaImg: carasPortada,
+        technology:'React, TypeScript, JavaScript, SEO, Jest',
+        description:'ReactCaras es un proyecto desarrollado como práctica para fortalecer habilidades en React, aplicando componentes funcionales y efectos visuales para construir una experiencia moderna y atractiva. Su objetivo principal fue crear una interfaz tipo landing page que incentive al usuario a suscribirse a una revista, cuidando la estructura, los estilos y las animaciones para lograr un diseño fluido y profesional. Además, el código fue minificado para optimizar el rendimiento y mejorar los tiempos de carga. El proyecto utiliza tecnologías como React, Styled Components, HTML5 y CSS3.',
+        infoData: 'Desarrollé Caras, una landing page enfocada en atraer y captar suscriptores para la revista mexicana del mismo nombre, especializada en entretenimiento y noticias del mundo del espectáculo. Este proyecto fue creado como práctica para reforzar mis habilidades en React, aplicando conceptos clave como componentes funcionales, manejo de estado y efectos visuales.',
+        imgProyectPort: imgCarasPort,
+        imgProyectSection: imgCarasSection,
+        imgProyectFeature: imgCarasFeature,
+        route: '/Caras',
+        livePage:'https://landingcaras.netlify.app/' ,
     },
 
     {name:'Vans',

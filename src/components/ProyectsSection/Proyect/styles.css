@@ -18,7 +18,6 @@
     #020617 50%,
     #000005 100%
   );
-
 }
 
 .proyectContainer::before {
@@ -27,7 +26,7 @@
   inset: 0;
   background-image: url("https://grainy-gradients.vercel.app/noise.svg");
   opacity: 0.1;
- }
+}
 
 .imgContainerP {
     display: flex;
@@ -35,11 +34,7 @@
     place-items: center;
     justify-content: space-evenly; 
     position: relative;
-    
-    
 }
-
-
 
 .infoConteinerP {
     grid-row: span 2 / span 2;
@@ -49,9 +44,7 @@
     color: #666;
     align-items: center;
     margin: 5%;
-
 }
-
 
 .card-swap-container {
   position: absolute;
@@ -63,7 +56,6 @@
   transform-origin: bottom right;
   perspective: 900px;
   overflow: visible;
-  overflow: hidden;
 }
 
 .card {
@@ -82,32 +74,18 @@
   -webkit-backface-visibility: hidden;
 }
 
-@media (max-width: 768px) {
-  .card-swap-container {
-    transform: scale(0.75) translate(25%, 25%);
-  }
-}
-
-@media (max-width: 480px) {
-  .card-swap-container {
-    transform: scale(0.55) translate(25%, 25%);
-  }
-}
-
-
-
-
 .proyectTitleGlitchContainer {
   position: relative;
   width: 90%;
   top: -10%;
   z-index: 2;
   justify-items: center;
-  
 }
+
 .containerGlitchText {
   font-size: 2vh;
 }
+
 .proyectt {
   position: absolute;
   font-weight: 900;
@@ -115,13 +93,11 @@
   text-transform: uppercase;
   line-height: 100px;
   pointer-events: none; 
-
-  
 }
+
 .top {
     position: absolute;
     clip-path: inset(0 0 50% 0);
-    
 }
 
 .bottom {
@@ -129,14 +105,9 @@
     clip-path: inset(50% 0 0 0);
 }
 
-
 .imgBack {
   width: 53%;
 }
-
-
-
-
 
 .backToProyecs {
   position: relative;
@@ -147,8 +118,6 @@
   text-decoration: none;
   cursor: pointer;
   place-self: flex-start;
-  
-  
 }
 
 .backToProyecs p {
@@ -156,7 +125,6 @@
   position: relative;
   font-size: 20px;
   color: #777777;
-  
 }
 
 .backToProyecs::after {
@@ -206,7 +174,6 @@
   place-self: end;
   margin-right: 13%;
 }
-
 
 .button {
   cursor: pointer;
@@ -259,5 +226,203 @@
 @keyframes text-rotation {
   to {
     rotate: 360deg;
+  }
+}
+
+/* Media Queries */
+
+
+@media (max-width: 1024px) {
+  .proyectContainer {
+    gap: 8%;
+  }
+  
+  .infoConteinerP {
+    margin: 3%;
+  }
+  
+  .card-swap-container {
+    width: 110%;
+    right: -5%;
+  }
+  
+  .containerGlitchText {
+    font-size: 1.8vh;
+  }
+  
+  .proyectt {
+    line-height: 80px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .proyectContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 5%;
+    height: auto;
+    min-height: 100vh;
+    padding: 5% 0;
+  }
+  
+  .imgContainerP {
+    order: 2;
+    margin-top: 5%;
+  }
+  
+  .infoConteinerP {
+    order: 1;
+    grid-row: auto;
+    margin: 5% 5% 0;
+  }
+  
+  .card-swap-container {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    transform: scale(0.8) translate(0, 0);
+    width: 100%;
+    height: 60vw;
+    margin: 5% auto;
+  }
+  
+  .card {
+    height: 50vw;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .proyectTitleGlitchContainer {
+    width: 95%;
+    top: -13%; 
+  }
+  
+  .containerGlitchText {
+    font-size: 1.5vh;
+  }
+  
+  .proyectt {
+    line-height: 60px;
+  }
+  
+  .imgBack {
+    width: 70%;
+  }
+  
+  .backToProyecs {
+    font-size: 18px;
+    margin-bottom: 13%;
+  }
+  
+  .backToProyecs p {
+    font-size: 18px;
+  }
+  
+  .liveProyect {
+    place-self: center;
+    margin-right: 0;
+    margin-top: 5%;
+  }
+  
+  .button {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .button__circle {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .proyectContainer {
+    gap: 3%;
+    padding: 8% 0;
+  }
+  
+  .infoConteinerP {
+    margin: 5% 3% 0;
+  }
+  
+  .card-swap-container {
+    transform: scale(0.6) translate(0, 0);
+    height: 80vw;
+  }
+  
+  .card {
+    height: 65vw;
+  }
+  
+  .proyectTitleGlitchContainer {
+    width: 100%;
+  }
+  
+  .containerGlitchText {
+    font-size: 1.2vh;
+  }
+  
+  .proyectt {
+    line-height: 40px;
+    font-size: 0.9em;
+  }
+  
+  .imgBack {
+    width: 85%;
+  }
+  
+  .backToProyecs {
+    font-size: 16px;
+  }
+  
+  .backToProyecs p {
+    font-size: 16px;
+  }
+  
+  .backToProyecs svg {
+    width: 12px;
+  }
+  
+  .button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .button__circle {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .button__text {
+    font-size: 0.85em;
+  }
+  
+  .liveProyect {
+    margin-top: 8%;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .containerGlitchText {
+    font-size: 1vh;
+  }
+  
+  .proyectt {
+    line-height: 35px;
+  }
+  
+  .card-swap-container {
+    transform: scale(0.5) translate(0, 0);
+  }
+  
+  .backToProyecs {
+    font-size: 14px;
+  }
+  
+  .backToProyecs p {
+    font-size: 14px;
   }
 }

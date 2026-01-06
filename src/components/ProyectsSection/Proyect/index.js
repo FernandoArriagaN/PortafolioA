@@ -241,7 +241,6 @@ export const Proyect = ({onNavigate}) => {
   }, [onNavigate]);
 
 
-  //dfgdfgdfg
 const buttonRef = useRef(null);
   const textRef = useRef(null);
   const iconRef = useRef(null);
@@ -259,7 +258,7 @@ const buttonRef = useRef(null);
       textEl.appendChild(span);
     });
 
-    /* -------- HOVER ANIMATIONS -------- */
+    //HOVER ANIMATIONS
     const button = buttonRef.current;
 
     const enter = () => {
@@ -401,15 +400,24 @@ const buttonRef = useRef(null);
                     pauseOnHover={true}
                 >
                     <Card>
-                    <img src={currentProyect.imgProyectPort} className="imgFront" alt="Project portfolio view" />
+                    <img 
+                      src={currentProyect.imgProyectPort} 
+                      className="imgFront" 
+                      alt="Project portfolio view" />
                     </Card>
 
                     <Card>
-                    <img src={currentProyect.imgProyectSection} className="imgSection" alt="Project section view" />
+                    <img 
+                      src={currentProyect.imgProyectSection} 
+                      className="imgSection" 
+                      alt="Project section view" />
                     </Card>
 
                     <Card>
-                    <img src={currentProyect.imgProyectFeature} className="imgFeatures" alt="Project features view" />
+                    <img 
+                      src={currentProyect.imgProyectFeature} 
+                      className="imgFeatures" 
+                      alt="Project features view" />
                     </Card>
                 </CardSwap>
             </article>

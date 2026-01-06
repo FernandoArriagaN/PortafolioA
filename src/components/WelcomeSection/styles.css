@@ -65,3 +65,52 @@
 }
 
 
+
+
+/* --- MEDIA QUERIES PARA IMPACTO MÓVIL --- */
+
+@media (max-width: 768px) {
+    .ramaTitle {
+        font-size: 18vw; 
+        margin-top: 10vh;
+        height: 70vh;
+    }
+
+    .secondLineDev,
+    .secondLineGraph {
+        left: 5%;
+        top: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nameTitle {
+        padding: 20px 5%;
+        font-size: 0.9rem;
+    }
+
+    .ramaTitle {
+        
+        font-size: 22vw; 
+        width: 100%;
+        margin: 0;
+    }
+
+    .secondLineDev,
+    .secondLineGraph {
+        top: 40%;
+        left: 8%;
+    }
+}
+
+
+@media (max-height: 500px) {
+    .ramaTitle {
+        height: 80vh;
+        font-size: 12vh;
+    }
+    .secondLineDev, .secondLineGraph {
+        top: 50%;
+    }
+}
+
