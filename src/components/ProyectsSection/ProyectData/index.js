@@ -106,7 +106,7 @@ export const ProyectsData = [
         imgProyectSection: imgGroovesSection,
         imgProyectFeature: imgGroovesFeature,
         route: '/Grooves',
-        livePage:'',
+        
     },
 ]
 

@@ -247,6 +247,7 @@ const buttonRef = useRef(null);
   const iconCopyRef = useRef(null);
 
   useEffect(() => {
+    if (!textRef.current) return;
     const textEl = textRef.current;
     const text = textEl.textContent;
     textEl.textContent = "";
@@ -356,6 +357,8 @@ const buttonRef = useRef(null);
                 <p>{currentProyect.technology} </p>
                 <p className="infoProyect">{currentProyect.description}</p>
                 <p className="info2Proyect">{currentProyect.infoData}</p>
+                
+               { currentProyect.livePage && (
                 <a target="_blank" rel="noopener noreferrer" href={currentProyect.livePage} className="liveProyect">
                   <button ref={buttonRef} className="button">
                     <p ref={textRef} className="button__text">
@@ -388,7 +391,9 @@ const buttonRef = useRef(null);
                       </svg>
                     </div>
                   </button>
-                </a>
+                </a> )}
+
+
             </article>
             <article className="imgContainerP">
                 <CardSwap
